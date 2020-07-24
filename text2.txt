@@ -1,0 +1,127 @@
+• Написать программу переводящую числа из римской записи в десятичную:
+
+function result($number){
+
+$fromRoman= '';
+
+$a = $number / 1000%10;
+
+$b = $number / 100 %10;
+
+$c = $number / 10%10;
+
+$d = $number % 10;
+
+if ($a !==0 )
+
+for ($i=0; $i<$a; $i++ )
+
+$fromRoman= $fromRoman . "M";
+
+if ($b !== 0) {
+
+if ($b <= 3)
+
+for ($i = 0; $i < $b; $i++)
+
+$fromRoman = $fromRoman . "C";
+
+if ($b === 4)
+
+$fromRoman= $fromRoman . "CD";
+
+if ($b === 5)
+
+$fromRoman= $fromRoman . "D";
+
+if ($b > 5 && $b < 9)
+
+{
+
+$fromRoman= $fromRoman ."D";
+
+for ($i = 0; $i < b - 5; $i++)
+
+$fromRoman= $fromRoman ."C";
+
+}
+
+if ($b === 9)
+
+$fromRoman= $fromRoman ."CM";
+
+}
+
+if ($c !== 0) {
+
+if ($c <= 3)
+
+for ($i = 0; $i < $c; $i++)
+
+$fromRoman= $fromRoman . "X";
+
+if ($c === 4)
+
+$fromRoman= $fromRoman . "XL";
+
+if ($c === 5)
+
+$fromRoman= $fromRoman . "L";
+
+if ($c > 5 && $c < 9)
+
+{
+
+$fromRoman= $fromRoman . "L";
+
+for ($i = 0; $i <$b - 5 ; $i++)
+
+$imskie = $fromRoman . "X";
+
+}
+
+if ($c === 9)
+
+$fromRoman= $fromRoman . "XC";
+
+}
+
+if ($d !== 0) {
+
+if ($d <= 3)
+
+for ($i = 0; $i < $d; $i++)
+
+$fromRoman = $fromRoman . "I";
+
+if ($d === 4)
+
+$fromRoman= $fromRoman . "IV";
+
+if ($d === 5)
+
+$fromRoman= $fromRoman . "V";
+
+if ($d > 5 && $d < 9)
+
+{
+
+$fromRoman= $fromRoman ."V";
+
+for ($i = 0; $i < $d - 5 ; $i++)
+
+$fromRoman= $fromRoman . "I";
+
+}
+
+if ($d === 9)
+
+$fromRoman= $fromRoman . "IX";
+
+}
+
+return $fromRoman ;
+
+}
+
+print_r(result(150));
